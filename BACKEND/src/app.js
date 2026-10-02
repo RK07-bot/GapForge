@@ -9,9 +9,14 @@ const app = express();
 
 app.use(express.json());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://gapforge-lp7a.onrender.com"
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin:allowedOrigins,
     credentials: true,
   }),
 );
